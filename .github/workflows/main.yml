@@ -33,8 +33,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
+        working-directory: ./api
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          cd api,
-          ./gradlew build sonarqube --info.   
+        run: ./gradlew build sonarqube --info.   
