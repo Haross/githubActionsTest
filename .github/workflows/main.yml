@@ -36,4 +36,5 @@ jobs:
         working-directory: ./api
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonarqube --info.   
+        run: gradle sonarqube
+        #run: ./gradlew build sonarqube --info.   
